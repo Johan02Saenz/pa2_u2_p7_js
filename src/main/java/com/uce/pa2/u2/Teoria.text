@@ -1,0 +1,36 @@
+Los datos no se eliminaran si es que no se confirma su eliminacion
+Se realizara un CRUD
+Para realizarlo (conceptos) [Persistencia - ORM (Object relational Mapping)] 
+Paradigma Relacional(De base de datos) una entidad representa a un objeto y relacionar entre objetos por relaciones  
+Paradigma POO
+JDC (Java Databse connection) programacion para un solo tipo de base, codigo muy acoplado con la tecnologia(incluso la version)
+Concepto que soluciona, que mapea los objetos del POO con el relacional 
+Existe una especificacion que define un conjunto de reglas, todo lenguaje tiene un conjunto de especificaciones que implementan este concepto 
+Java-> Especificaciones(no implementacion como tal si no un conjunto de implementaciones ): Jakarta persistence(Especificacion)
+Hibernate-> framework que implementa Jakarta persistence api y por consecuencia los principios ORM
+
+1 .Cuando requiero conectar a la base de datos, requiero de un driver 
+2. Configuracion para la conexion a la base de datos
+String de conexion a la bd (Ruta, puerto, credenciales)
+Entidades en la bd se creen en funcion del codigo 
+La app imprima las consultas que se ejecutan en la bd 
+
+La configuracion se realiza en el archivo de configuracion de la app
+
+#String de conexion a la db
+quarkus.datasource.jdbc.url = jdbc:postgresql://localhost:5432/pa2_u2_p7_ec
+#Tipo database
+quarkus.datasource.db-kind=postgresql
+#Credenciales(User y password)
+quarkus.datasource.username=postgres
+quarkus.datasource.password= labcom,2015
+#Mostrar las sentencias sql en la consola
+quarkus.hibernate-orm.log.sql=true
+#Gestion de la base de batos -> crea desde cero la db 
+quarkus.hibernate-orm.database.generation=drop-and-create
+-> con update: sincroniza con los cambios, no elimina nada como el anterior
+
+El paquete domain almacena a todo lo relacionados a la aplicacion o logica de negocios en terminos de datos 
+Los objetos y los mecanismo con los que se almacenan esos datos
+Model-> Objetos o entidades
+Repository-> Los mecanismos para acceder a la base de datos
