@@ -2,11 +2,30 @@ package com.uce.pa2.u2.pedidos.domain.model;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "MetodoPagos")
 public class MetodoPago {
+
+    @Id
+    @SequenceGenerator(name = "MetodoPagos_seq", sequenceName = "MetodoPagos_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MetodoPagos_seq")
+    @Column(name = "mtpg_id")
     private Integer id;
+    @Column(name = "mtpg_nombre")
     private String nombre;
+    @Column(name = "mtpg_descripcion")
     private String descripcion;
+    @Column(name = "mtpg_comision")
     private BigDecimal comision;
+    @Column(name = "mtpg_activo")
     private Boolean activo;
 
     public MetodoPago() {

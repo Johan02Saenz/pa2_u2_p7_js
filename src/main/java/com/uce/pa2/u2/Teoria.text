@@ -34,3 +34,15 @@ El paquete domain almacena a todo lo relacionados a la aplicacion o logica de ne
 Los objetos y los mecanismo con los que se almacenan esos datos
 Model-> Objetos o entidades
 Repository-> Los mecanismos para acceder a la base de datos
+
+Primer Mapeo-> un obj Java corrsponde a una tabla de base de datos Pedido.java -> mapea -> Pedidos
+Anotaciones: 
+    @Entity // indica que la class sera administrada por jakarta persisten API
+    @Table(name = "Pedidos")// nombre de la tabla de DB
+    @Id // para decir que es la primary key
+    @Column(name = "pedido_id") //Asociacion con la columna 
+    @SequenceGenerator(name="pedido_seq",sequenceName ="pedido_seq_db",allocationSize = 1) //generador de secuencias para la primary key
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "pedido_seq")// genera la secuencia 
+
+Entity manager, interfaz que permite interacturar desde el repo hacia la bse de datos
+Algunos metodos/consultas ya escritos, listas para usar en un crud basico

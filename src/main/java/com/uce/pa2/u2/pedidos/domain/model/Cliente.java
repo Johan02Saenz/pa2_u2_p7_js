@@ -1,10 +1,29 @@
 package com.uce.pa2.u2.pedidos.domain.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Clientes")
 public class Cliente {
+    
+    @Id
+    @SequenceGenerator(name = "cliente_seq", sequenceName = "cliente_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq")
+    @Column(name = "clt_id")
     private Integer id;
+    @Column(name = "clt_nombre")
     private String nombre;
+    @Column(name = "clt_telefono")
     private String telefono;
+    @Column(name = "clt_email")
     private String email;
+    @Column(name = "clt_direccion")
     private String direccion;
 
     public Cliente() {
