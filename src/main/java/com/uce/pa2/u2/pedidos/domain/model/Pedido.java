@@ -67,4 +67,18 @@ public class Pedido {
         this.fecha = fecha;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[Pedido]Detalles {");
+        sb.append("id=").append(id);
+        sb.append(", producto=").append(producto);
+        sb.append(", precio=").append(precio);
+        sb.append(", fecha=").append(fecha.toString());
+        sb.append('}');
+        return sb.toString();
+    }
+
+
+
 }
