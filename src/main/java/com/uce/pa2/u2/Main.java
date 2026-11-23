@@ -3,7 +3,6 @@ package com.uce.pa2.u2;
 import java.time.LocalDateTime;
 
 import com.uce.pa2.u2.application.PedidoService;
-import com.uce.pa2.u2.application.ProductoService;
 import com.uce.pa2.u2.pedidos.domain.model.Pedido;
 
 import io.quarkus.runtime.Quarkus;
@@ -16,9 +15,7 @@ public class Main implements QuarkusApplication {
     @Inject
     private PedidoService pedidoService;
 
-    @Inject
-    private ProductoService productoService;
-
+   
     public static void main(String[] args) {
         Quarkus.run(Main.class, args);
     }
@@ -33,7 +30,8 @@ public class Main implements QuarkusApplication {
         p1.setFecha(LocalDateTime.now());
         p1.setProducto("Audifonos Soundcore q20i");
         p1.setPrecio(65.00);
-        pedidoService.guardar(p1);
+        pedidoService.guardar(p1); 
+
         // Read (buscar)
         p1 = this.pedidoService.buscarPorID(1);
         System.out.println("Pedido encontrado: " + p1.toString());
