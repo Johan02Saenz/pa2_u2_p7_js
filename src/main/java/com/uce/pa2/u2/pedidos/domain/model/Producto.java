@@ -1,6 +1,5 @@
 package com.uce.pa2.u2.pedidos.domain.model;
 
-import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,7 +17,7 @@ public class Producto {
     @SequenceGenerator(name = "producto_seq", sequenceName = "producto_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "producto_seq")
     @Column(name = "prdt_id")
-    private Integer id;
+    private Long id;
     @Column(name = "prdt_nombre")
     private String nombre;
     @Column(name = "prdt_precio")
@@ -31,19 +30,18 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(Integer id, String nombre, Double precio, Integer stock, Integer categoriaId) {
-        this.id = id;
+    public Producto(String nombre, Double precio, Integer stock, Integer categoriaId) {
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
         this.categoriaId = categoriaId;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

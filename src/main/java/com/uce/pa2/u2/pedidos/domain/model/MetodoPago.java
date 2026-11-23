@@ -2,6 +2,7 @@ package com.uce.pa2.u2.pedidos.domain.model;
 
 import java.math.BigDecimal;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +13,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "MetodoPagos")
-public class MetodoPago {
+public class MetodoPago extends PanacheEntityBase{
 
     @Id
     @SequenceGenerator(name = "MetodoPagos_seq", sequenceName = "MetodoPagos_seq", allocationSize = 1)
