@@ -46,3 +46,12 @@ Anotaciones:
 
 Entity manager, interfaz que permite interacturar desde el repo hacia la bse de datos
 Algunos metodos/consultas ya escritos, listas para usar en un crud basico
+
+
+##Tipos de query:
+###1. JPQL (Java Persistence Query Languaje)
+Lenguaje de consulta orientado a objetos
+Realizar querys manipulando objetos
+
+        // Implementacion de la interfaz TypeQuery
+        // this.EntityManager.createQuery("Consulta JPQL", Clase con la que trabaja)

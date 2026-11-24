@@ -1,5 +1,7 @@
 package com.uce.pa2.u2.application;
 
+import java.util.Optional;
+
 import com.uce.pa2.u2.pedidos.domain.model.Pedido;
 import com.uce.pa2.u2.pedidos.infraestructure.persistence.repository.PedidoRepositoryImpl;
 
@@ -20,7 +22,7 @@ public class PedidoService {
     }
 
  
-    public Pedido buscarPorID(Integer id) {
+    public Optional<Pedido> buscarPorID(Integer id) {
         return this.repo.read(id);
     }
 
@@ -32,6 +34,9 @@ public class PedidoService {
  
     public void eliminar(Integer id) {
         this.repo.delete(id);
+    }
+    public Optional<Pedido> buscarPorNumero (String numero){
+        return this.repo.readByNumber(numero);
     }
 
 
