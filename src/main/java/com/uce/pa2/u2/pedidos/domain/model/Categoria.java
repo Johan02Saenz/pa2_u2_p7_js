@@ -28,8 +28,8 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria(Integer id, String nombre, String descripcion, Boolean activa, Integer orden) {
-        this.id = id;
+    public Categoria( String nombre, String descripcion, Boolean activa, Integer orden) {
+        
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.activa = activa;

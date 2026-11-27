@@ -8,7 +8,7 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 @ApplicationScoped
-@Transactional 
+@Transactional
 public class ProductoService {
     @Inject
     private ProductoRepository repo;
@@ -21,11 +21,13 @@ public class ProductoService {
         return this.repo.findById(id);
     }
 
+    @Transactional
     public void actualizar(Producto producto) {
         Producto p = this.repo.findById(producto.getId());
         p.setNombre(producto.getNombre());
         p.setPrecio(producto.getPrecio());
         p.setStock(producto.getStock());
+
     }
 
     public void eliminar(Long id) {
