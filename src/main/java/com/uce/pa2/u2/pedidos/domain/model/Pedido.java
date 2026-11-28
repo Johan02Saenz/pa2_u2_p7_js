@@ -24,8 +24,9 @@ public class Pedido {
     private Double precio;
     @Column(name = "pdd_fecha")
     private LocalDateTime fecha;
+    @Column(name = "pdd_numero")
+    private String numero;
 
-    
     public Pedido() {
     }
 
@@ -66,5 +67,27 @@ public class Pedido {
     public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pedido{");
+        sb.append("id=").append(id);
+        sb.append(", producto=").append(producto);
+        sb.append(", precio=").append(precio);
+        sb.append(", fecha=").append(fecha);
+        sb.append(", numero=").append(numero);
+        sb.append('}');
+        return sb.toString();
+    }
+
 
 }
